@@ -30,18 +30,12 @@ public class FeaturedDestinationSteps {
 	
     @Then("^(?:she|he) should see ([0-9]+) featured destinations$")
     public void shouldSeeFeaturedDestinations(int featuredCount) {
-    	List<WebElement> featuredDestinations = driver.findElements(By.id("welcome-message"));
-    	assertThat(featuredDestinations.size(), equalTo(featuredCount));
+    	
     }
 
     @Then("^the featured destinations should include (.*) costing ([0-9]+)$")
     public void featuredDestinationsShouldInclude(String expectedDestination, int price) {
-    	List<WebElement> featuredDestinations = driver.findElements(By.cssSelector(".featured-destination"));
-    	for (WebElement featuredDestination : featuredDestinations) {
-    		String destinationCity =  featuredDestination.findElement(By.cssSelector(".destination-title")).getText();
-    		String priceValue = featuredDestination.findElement(By.className(".destination-price")).getText();
-    		int priceIntValue = Integer.parseInt(priceValue.substring(1));
-		}
+    	
     	
     }
     
